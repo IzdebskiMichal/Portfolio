@@ -39,5 +39,11 @@ namespace Portfolio.Web.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(int id)
+        {
+            var model = _db.GetRestaurantById(id);
+            return View(model);
+        }
     }
 }
