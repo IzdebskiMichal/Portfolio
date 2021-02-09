@@ -51,6 +51,10 @@ namespace Portfolio.Web.Controllers
         public ActionResult Edit(int id)
         {
             var model = _db.GetRestaurantById(id);
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
             return View(model);
         }
 
@@ -58,8 +62,13 @@ namespace Portfolio.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Restaurant restaurant)
         {
-            _db.EditRestaurant(restaurant);
-            return RedirectToAction("Details", restaurant.Id);
+            if (ModelState.IsValid)
+            {
+                _db.EditRestaurant(restaurant);
+                return RedirectToAction("Details", new {id = restaurant.Id});
+            }
+
+            return View(restaurant);
         }
     }
 }
