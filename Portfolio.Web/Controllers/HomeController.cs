@@ -11,9 +11,9 @@ namespace Portfolio.Web.Controllers
     {
         private IRestaurantData _db;
 
-        public HomeController()
+        public HomeController(IRestaurantData db)
         {
-            _db = new InMemoryRestaurantDB();
+            _db = db;
         }
         public ActionResult Index()
         {
