@@ -45,5 +45,12 @@ namespace Portfolio.Web.Controllers
             var model = _db.GetRestaurantById(id);
             return View(model);
         }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var model = _db.GetRestaurantById(id);
+            return View(model);
+        }
     }
 }
