@@ -8,5 +8,6 @@ namespace Portfolio.Data.Services
         IEnumerable<Restaurant> GetAll();
         Restaurant GetRestaurantById(int id);
         void AddRestaurant(Restaurant restaurant);
+        void EditRestaurant(Restaurant restaurant);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,13 @@ namespace Portfolio.Data.Services
         public void AddRestaurant(Restaurant restaurant)
         {
             _db.Restaurants.Add(restaurant);
+            _db.SaveChanges();
+        }
+
+        public void EditRestaurant(Restaurant restaurant)
+        {
+            var entry = _db.Entry(restaurant);
+            entry.State = EntityState.Modified;
             _db.SaveChanges();
         }
     }

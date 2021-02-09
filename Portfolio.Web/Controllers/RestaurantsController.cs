@@ -31,6 +31,7 @@ namespace Portfolio.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Restaurant restaurant)
         {
             if (restaurant != null)
@@ -51,6 +52,14 @@ namespace Portfolio.Web.Controllers
         {
             var model = _db.GetRestaurantById(id);
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Restaurant restaurant)
+        {
+            _db.EditRestaurant(restaurant);
+            return RedirectToAction("Details", restaurant.Id);
         }
     }
 }

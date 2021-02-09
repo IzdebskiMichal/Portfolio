@@ -39,5 +39,12 @@ namespace Portfolio.Data.Services
             _restaurants.Add(restaurant);
             }
         }
+
+        public void EditRestaurant(Restaurant restaurant)
+        {
+            var currRestaurant = GetRestaurantById(restaurant.Id);
+            currRestaurant.Name = restaurant.Name;
+            currRestaurant.Cuisine = restaurant.Cuisine;
+        }
     }
 }
