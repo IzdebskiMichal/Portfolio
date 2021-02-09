@@ -15,6 +15,7 @@ namespace Portfolio.Web.Controllers
         {
             _db = db;
         }
+
         // GET: Restaurants
         public ActionResult Index()
         {
