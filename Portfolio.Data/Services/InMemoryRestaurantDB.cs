@@ -26,5 +26,18 @@ namespace Portfolio.Data.Services
         {
             return _restaurants.OrderBy(r=>r.Name);
         }
+
+        public Restaurant GetRestaurantById(int id)
+        {
+            return _restaurants.FirstOrDefault(r => r.Id == id);
+        }
+
+        public void Add(Restaurant restaurant)
+        {
+            if (restaurant !=null)
+            {
+            _restaurants.Add(restaurant);
+            }
+        }
     }
 }

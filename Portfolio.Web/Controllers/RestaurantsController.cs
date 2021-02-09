@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Portfolio.Data.Data;
 using Portfolio.Data.Services;
 
 namespace Portfolio.Web.Controllers
@@ -21,6 +22,18 @@ namespace Portfolio.Web.Controllers
         {
             var model = _db.GetAll();
             return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Restaurant restaurant)
+        {
+            return View();
         }
     }
 }
