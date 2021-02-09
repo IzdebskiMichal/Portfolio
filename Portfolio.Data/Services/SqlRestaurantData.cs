@@ -39,5 +39,15 @@ namespace Portfolio.Data.Services
             entry.State = EntityState.Modified;
             _db.SaveChanges();
         }
+
+        public void DeleteRestaurant(int id)
+        {
+            var restaurant = _db.Restaurants.Find(id);
+
+            if (restaurant == null) return;
+
+            _db.Restaurants.Remove(restaurant);
+            _db.SaveChanges();
+        }
     }
 }

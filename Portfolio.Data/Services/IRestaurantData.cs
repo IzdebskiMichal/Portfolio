@@ -9,5 +9,6 @@ namespace Portfolio.Data.Services
         Restaurant GetRestaurantById(int id);
         void AddRestaurant(Restaurant restaurant);
         void EditRestaurant(Restaurant restaurant);
+        void DeleteRestaurant(int id);
     }
 }

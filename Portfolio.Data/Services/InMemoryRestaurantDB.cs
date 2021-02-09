@@ -46,5 +46,11 @@ namespace Portfolio.Data.Services
             currRestaurant.Name = restaurant.Name;
             currRestaurant.Cuisine = restaurant.Cuisine;
         }
+
+        public void DeleteRestaurant(int id)
+        {
+            var restaurant = GetRestaurantById(id);
+            _restaurants.Remove(restaurant);
+        }
     }
 }

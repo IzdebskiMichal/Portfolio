@@ -77,5 +77,13 @@ namespace Portfolio.Web.Controllers
             var model = _db.GetRestaurantById(id);
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, FormCollection form)
+        {
+            _db.DeleteRestaurant(id);
+            return RedirectToAction("Index");
+        }
     }
 }
