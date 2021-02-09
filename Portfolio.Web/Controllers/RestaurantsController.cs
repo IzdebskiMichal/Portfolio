@@ -70,5 +70,12 @@ namespace Portfolio.Web.Controllers
 
             return View(restaurant);
         }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var model = _db.GetRestaurantById(id);
+            return View(model);
+        }
     }
 }
