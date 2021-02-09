@@ -9,7 +9,7 @@ namespace Portfolio.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private IRestaurantData _db;
+        private readonly IRestaurantData _db;
 
         public HomeController(IRestaurantData db)
         {
