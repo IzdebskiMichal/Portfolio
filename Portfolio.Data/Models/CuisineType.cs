@@ -1,4 +1,4 @@
-﻿namespace Portfolio.Data.Data
+﻿namespace Portfolio.Data.Models
 {
     public enum CuisineType
     {

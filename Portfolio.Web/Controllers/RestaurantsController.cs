@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Portfolio.Data.Data;
+using Portfolio.Data.Models;
 using Portfolio.Data.Services;
 
 namespace Portfolio.Web.Controllers
@@ -33,7 +33,11 @@ namespace Portfolio.Web.Controllers
         [HttpPost]
         public ActionResult Create(Restaurant restaurant)
         {
-            return View();
+            if (restaurant != null)
+            {
+                _db.AddRestaurant(restaurant);
+            }
+            return RedirectToAction("Index");
         }
     }
 }

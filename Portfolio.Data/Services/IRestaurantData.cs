@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Portfolio.Data.Data;
+using Portfolio.Data.Models;
 
 namespace Portfolio.Data.Services
 {
@@ -7,6 +7,6 @@ namespace Portfolio.Data.Services
     {
         IEnumerable<Restaurant> GetAll();
         Restaurant GetRestaurantById(int id);
-        void Add(Restaurant restaurant);
+        void AddRestaurant(Restaurant restaurant);
     }
 }

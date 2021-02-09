@@ -51,8 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\CuisineType.cs" />
-    <Compile Include="Data\Restaurant.cs" />
+    <Compile Include="Models\CuisineType.cs" />
+    <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\InMemoryRestaurantDB.cs" />
     <Compile Include="Services\IRestaurantData.cs" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Portfolio.Data.Data;
+using Portfolio.Data.Models;
 
 namespace Portfolio.Data.Services
 {
@@ -26,12 +26,10 @@ namespace Portfolio.Data.Services
             return _db.Restaurants.FirstOrDefault(r => r.Id == id);
         }
 
-        public void Add(Restaurant restaurant)
+        public void AddRestaurant(Restaurant restaurant)
         {
-            if (restaurant != null)
-            {
-                _db.Restaurants.Add(restaurant);
-            }
+            _db.Restaurants.Add(restaurant);
+            _db.SaveChanges();
         }
     }
 }
