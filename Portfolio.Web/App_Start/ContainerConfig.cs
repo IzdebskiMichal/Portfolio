@@ -18,7 +18,7 @@ namespace Portfolio.Web
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterType<SqlRestaurantData>().As<IRestaurantData>().InstancePerRequest();
-            builder.RegisterType<RestaurantsDbContext>().InstancePerRequest();
+            builder.RegisterType<PortfolioDBContext>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
