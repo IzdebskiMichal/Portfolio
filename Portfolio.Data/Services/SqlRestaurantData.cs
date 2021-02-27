@@ -10,9 +10,9 @@ namespace Portfolio.Data.Services
 {
     public class SqlRestaurantData : IRestaurantData
     {
-        private readonly RestaurantsDbContext _db;
+        private readonly PortfolioDBContext _db;
 
-        public SqlRestaurantData(RestaurantsDbContext db)
+        public SqlRestaurantData(PortfolioDBContext db)
         {
             _db = db;
         }

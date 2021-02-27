@@ -8,7 +8,7 @@ using Portfolio.Data.Models;
 
 namespace Portfolio.Data.Services
 {
-    public class RestaurantsDbContext : DbContext
+    public class PortfolioDBContext : DbContext
     {
         public DbSet<Restaurant> Restaurants { get; set; }
     }
