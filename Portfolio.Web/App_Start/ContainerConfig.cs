@@ -15,7 +15,7 @@ namespace Portfolio.Web
 {
     public class ContainerConfig
     {
-        internal static void RegisterContainer()
+        public static void RegisterContainer()
         {
             var builder = new ContainerBuilder();
             var config = GlobalConfiguration.Configuration;
