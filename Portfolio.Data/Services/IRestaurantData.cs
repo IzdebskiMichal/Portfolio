@@ -11,5 +11,6 @@ namespace Portfolio.Data.Services
         void AddRestaurant(Restaurant restaurant);
         void EditRestaurant(Restaurant restaurant);
         void DeleteRestaurant(int id);
+        IEnumerable<Employee> GetEmployeesFromRestaurant(int id);
     }
 }

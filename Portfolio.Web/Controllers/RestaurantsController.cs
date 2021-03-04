@@ -43,6 +43,7 @@ namespace Portfolio.Web.Controllers
 
         public ActionResult Details(int id)
         {
+            //todo display employees
             var model = _db.GetRestaurantById(id);
             return View(model);
         }
@@ -84,6 +85,16 @@ namespace Portfolio.Web.Controllers
         {
             _db.DeleteRestaurant(id);
             return RedirectToAction("Index");
+        }
+
+        //todo add a controller for employees. In it's controller allow user to remove, add, edit employes in a specific restaurant.
+        public ActionResult Employees(Restaurant restaurant, int id)
+        {
+            var model = _db.GetEmployeesFromRestaurant(id);
+            if (model == null) 
+                return RedirectToAction("CreateEmployee", new {id = restaurant.Id}); //todo add CreateEmployee action.
+            return View(model); //todo add a view for this action.
+            throw new NotImplementedException();
         }
     }
 }

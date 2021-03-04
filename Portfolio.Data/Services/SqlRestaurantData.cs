@@ -49,5 +49,11 @@ namespace Portfolio.Data.Services
             _db.Restaurants.Remove(restaurant);
             _db.SaveChanges();
         }
+
+        public IEnumerable<Employee> GetEmployeesFromRestaurant(int id)
+        {
+            var restaurant = GetRestaurantById(id);
+            return restaurant.Employees;
+        }
     }
 }
