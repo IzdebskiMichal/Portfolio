@@ -15,28 +15,23 @@ namespace Portfolio.Web
 {
     public class ContainerConfig
     {
-        public static void RegisterContainer()
+        internal static void RegisterContainer(HttpConfiguration httpConfiguration)
         {
             var builder = new ContainerBuilder();
-            var config = GlobalConfiguration.Configuration;
-
-            //registering api controllers
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
             //registering controllers
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
+
+            //registering api controllers
+            builder.RegisterApiControllers(typeof(MvcApplication).Assembly);
 
             //register services
             builder.RegisterType<SqlRestaurantData>().As<IRestaurantData>().InstancePerRequest();
             builder.RegisterType<PortfolioDBContext>().InstancePerRequest();
 
-            //set up config
-            builder.RegisterWebApiFilterProvider(config);
-            builder.RegisterWebApiModelBinderProvider();
-
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+            httpConfiguration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }
     }
 }
