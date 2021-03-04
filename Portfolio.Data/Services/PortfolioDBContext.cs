@@ -11,5 +11,10 @@ namespace Portfolio.Data.Services
     public class PortfolioDBContext : DbContext
     {
         public DbSet<Restaurant> Restaurants { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<PortfolioDBContext>(null);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

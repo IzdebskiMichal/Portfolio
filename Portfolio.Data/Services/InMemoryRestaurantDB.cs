@@ -7,7 +7,7 @@ using Portfolio.Data.Models;
 
 namespace Portfolio.Data.Services
 {
-    public class InMemoryRestaurantDB : IRestaurantData
+    public class InMemoryRestaurantDB //: IRestaurantData
     {
         List<Restaurant> _restaurants;
 
